@@ -1,0 +1,17 @@
+{
+  "name": "忘れ物チェック",
+  "short_name": "忘れ物チェック",
+  "description": "忘れ物や持ち物をチェックするためのスケジュール管理アプリ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07090f",
+  "theme_color": "#7c6ef5",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
