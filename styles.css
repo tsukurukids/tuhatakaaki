@@ -324,7 +324,7 @@ header {
 }
 
 .date-display {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     font-weight: 500;
     margin-top: -2px;
@@ -334,7 +334,7 @@ header {
 .title-row {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     white-space: nowrap;
     /* 全体が折り返さないようにする */
     overflow: hidden;
@@ -343,8 +343,8 @@ header {
 
 /* 現在時刻の数字 */
 .clock-display {
-    font-size: 0.75rem;
-    /* 時計の文字を少し小さくする */
+    font-size: 0.9rem;
+    /* 時計の文字を少し大きくする */
     font-weight: 700;
     color: var(--primary);
     letter-spacing: 0.04em;
@@ -831,8 +831,15 @@ main::-webkit-scrollbar {
 }
 
 @keyframes fadeInView {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .schedule-header {
@@ -985,8 +992,13 @@ main::-webkit-scrollbar {
 }
 
 /* 曜日の色分け */
-.day-card[data-day="sun"] .day-name { color: #ff5252; }
-.day-card[data-day="sat"] .day-name { color: #448aff; }
+.day-card[data-day="sun"] .day-name {
+    color: #ff5252;
+}
+
+.day-card[data-day="sat"] .day-name {
+    color: #448aff;
+}
 
 .day-selector-container {
     display: flex;
@@ -1591,6 +1603,8 @@ main::-webkit-scrollbar {
     width: 80px;
     border-radius: var(--radius-full);
     flex-shrink: 0;
+
+    .item-list: :-webkit-s
 }
 
 /* 長押し中に少し震えるアニメーション（並び替え開始の合図） */
@@ -1757,7 +1771,7 @@ main::-webkit-scrollbar {
         scrollbar-color: var(--text-faint) transparent;
     }
 
-    .item-list::-webkit-scrollbar {
+    crollbar {
         width: 4px;
     }
 
