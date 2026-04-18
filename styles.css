@@ -576,19 +576,19 @@ main::-webkit-scrollbar {
 .time-filter-chip {
     flex-shrink: 0;
     /* ボタンが縮まないようにする */
-    padding: 5px 12px;
+    padding: 8px 16px;
     border-radius: var(--radius-full);
     border: 1px solid var(--border);
     background: var(--surface);
     color: var(--text-muted);
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     font-weight: 600;
     font-family: 'Outfit', sans-serif;
     cursor: pointer;
     white-space: nowrap;
     /* 折り返さない */
     transition: all 0.18s ease;
-    min-height: 32px;
+    min-height: 42px;
     display: flex;
     align-items: center;
 }
@@ -730,12 +730,13 @@ main::-webkit-scrollbar {
     border-color: rgba(124, 110, 245, 0.3);
 }
 
-#new-item-input {
+#new-item-input,
+#new-item-time {
     width: 100%;
     background: transparent;
     border: none;
     border-bottom: 1.5px solid var(--border);
-    padding: 6px 4px 10px;
+    padding: 10px 4px 12px;
     color: var(--text-main);
     font-size: 1rem;
     font-family: 'Outfit', sans-serif;
@@ -749,15 +750,18 @@ main::-webkit-scrollbar {
     user-select: text;
 }
 
-#new-item-input::placeholder {
+#new-item-input::placeholder,
+#new-item-time::placeholder {
     color: var(--text-faint);
 }
 
-#new-item-input:focus {
+#new-item-input:focus,
+#new-item-time:focus {
     border-bottom-color: var(--primary);
 }
 
-[data-theme="light"] #new-item-input {
+[data-theme="light"] #new-item-input,
+[data-theme="light"] #new-item-time {
     border-bottom-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -937,7 +941,7 @@ main::-webkit-scrollbar {
 }
 
 .day-item-time {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     color: var(--accent);
     font-weight: 600;
     white-space: nowrap;
@@ -1188,12 +1192,12 @@ main::-webkit-scrollbar {
 
 /* 時間帯の小さなバッジ */
 .item-time {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     color: var(--accent);
     background: rgba(72, 211, 200, 0.12);
     border: 1px solid rgba(72, 211, 200, 0.25);
     border-radius: var(--radius-full);
-    padding: 2px 8px;
+    padding: 4px 10px;
     font-weight: 600;
     white-space: nowrap;
     align-self: flex-start;
