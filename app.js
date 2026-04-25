@@ -159,26 +159,76 @@ themeToggleBtn.addEventListener('click', () => {
 
 // パレットボタンを押したときに、色を選ぶ画面を開く
 colorPaletteBtn.addEventListener('click', () => {
+  // 現在選ばれている色を特定する
+  const savedColor = JSON.parse(localStorage.getItem('themeColor')) || THEME_COLORS[0];
+  const currentName = savedColor.name;
+
   // 色のボタンを作る
   colorOptionsGrid.innerHTML = '';
   THEME_COLORS.forEach(c => {
+    // ボタンとテキストを包む要素
+    const itemWrapper = document.createElement('div');
+    itemWrapper.style.display = 'flex';
+    itemWrapper.style.flexDirection = 'column';
+    itemWrapper.style.alignItems = 'center';
+    itemWrapper.style.gap = '8px';
+
     const btn = document.createElement('button');
-    btn.style.width = '50px';
-    btn.style.height = '50px';
+    btn.style.width = '52px';
+    btn.style.height = '52px';
     btn.style.borderRadius = '50%';
-    btn.style.border = '3px solid white';
     btn.style.cursor = 'pointer';
     btn.style.background = `linear-gradient(135deg, ${c.g1}, ${c.g2})`;
-    btn.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+    btn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    btn.style.transition = 'all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    btn.style.display = 'flex';
+    btn.style.alignItems = 'center';
+    btn.style.justifyContent = 'center';
+    btn.style.position = 'relative';
+
+    // 現在選ばれている色ならチェックマークを出す
+    if (c.name === currentName) {
+      btn.style.border = '4px solid var(--primary)';
+      btn.style.transform = 'scale(1.1)';
+      btn.innerHTML = '<i class="fa-solid fa-check" style="color: white; font-size: 1.1rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>';
+    } else {
+      btn.style.border = '3px solid white';
+    }
+
+    // 色の名前ラベル
+    const label = document.createElement('span');
+    label.textContent = c.name;
+    label.style.fontSize = '0.7rem';
+    label.style.fontWeight = '700';
+    label.style.color = 'var(--text-main)';
+    label.style.textAlign = 'center';
+    label.style.whiteSpace = 'nowrap';
+    label.style.opacity = '0.9';
+
+    // ホバーした時の動き（PC用）
+    btn.addEventListener('mouseenter', () => {
+      btn.style.transform = 'scale(1.15)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      if (c.name === currentName) btn.style.transform = 'scale(1.1)';
+      else btn.style.transform = 'scale(1)';
+    });
 
     // ボタンを押したときに色を変える！
     btn.addEventListener('click', () => {
-      applyThemeColor(c);
-      localStorage.setItem('themeColor', JSON.stringify(c));
-      colorModal.classList.add('hidden'); // 閉じる
+      // 押した瞬間のぷるんとしたアニメーション
+      btn.style.transform = 'scale(0.9)';
+      
+      setTimeout(() => {
+        applyThemeColor(c);
+        localStorage.setItem('themeColor', JSON.stringify(c));
+        colorModal.classList.add('hidden'); // 閉じる
+      }, 150);
     });
 
-    colorOptionsGrid.appendChild(btn);
+    itemWrapper.appendChild(btn);
+    itemWrapper.appendChild(label);
+    colorOptionsGrid.appendChild(itemWrapper);
   });
 
   colorModal.classList.remove('hidden');

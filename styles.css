@@ -417,6 +417,17 @@ header {
     transform: scale(0.92);
 }
 
+#color-palette-btn {
+    color: var(--primary);
+    border-color: var(--primary-glow);
+    background: rgba(124, 110, 245, 0.1);
+}
+
+#color-palette-btn:active {
+    background: rgba(124, 110, 245, 0.2);
+}
+
+
 /* ===================================================
    メインスクロール領域
    =================================================== */
