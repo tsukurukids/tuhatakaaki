@@ -136,6 +136,13 @@ function applyThemeColor(colors) {
   root.style.setProperty('--gradient-1', colors.g1);
   root.style.setProperty('--gradient-2', colors.g2);
   root.style.setProperty('--gradient-3', colors.g3);
+
+  // 光（Glow）の効果も色に合わせて変えることで、より一体感を出すよ！
+  // 透明度付きの16進数（末尾にアルファ値を追加）を使って生成するね
+  root.style.setProperty('--primary-glow', colors.primary + '80'); // 50%透明度
+  root.style.setProperty('--secondary-glow', colors.g2 + '60');    // 37%透明度
+  root.style.setProperty('--success-glow', colors.g3 + '60');
+  root.style.setProperty('--danger-glow', '#f8717160');
 }
 
 function updateThemeIcon(theme) {
