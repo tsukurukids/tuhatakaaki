@@ -89,7 +89,7 @@ html {
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-color);
-    background-image: 
+    background-image:
         radial-gradient(circle at 0% 0%, var(--primary-glow), transparent 75%),
         radial-gradient(circle at 100% 100%, var(--secondary-glow), transparent 75%);
     color: var(--text-main);

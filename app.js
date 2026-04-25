@@ -109,7 +109,7 @@ const THEME_COLORS = [
   { name: '宇宙', primary: '#8b5cf6', g1: '#8b5cf6', g2: '#d946ef', g3: '#f472b6' },
   { name: '森', primary: '#059669', g1: '#059669', g2: '#4ade80', g3: '#bef264' },
   { name: '空', primary: '#0ea5e9', g1: '#0ea5e9', g2: '#7dd3fc', g3: '#e0f2fe' },
-  
+
   // VIPカラー
   { name: 'VIPゴールド', primary: '#d4af37', g1: '#d4af37', g2: '#fcf6ba', g3: '#ff8c00' },
   { name: 'VIPプラチナ', primary: '#94a3b8', g1: '#94a3b8', g2: '#e2e8f0', g3: '#475569' },
@@ -268,7 +268,7 @@ colorPaletteBtn.addEventListener('click', () => {
     btn.addEventListener('click', () => {
       // 押した瞬間のぷるんとしたアニメーション
       btn.style.transform = 'scale(0.9)';
-      
+
       setTimeout(() => {
         applyThemeColor(c);
         localStorage.setItem('themeColor', JSON.stringify(c));
@@ -1554,7 +1554,7 @@ function updateViewMode() {
   if (viewMode === 'category') {
     viewCategoryTab.classList.add('active');
     viewScheduleTab.classList.remove('active');
-    
+
     categoryWrapper.classList.remove('hidden');
     categoryHeader.classList.remove('hidden');
     progressContainer.classList.remove('hidden');
@@ -1562,9 +1562,9 @@ function updateViewMode() {
     actionsArea.classList.remove('hidden');
     itemList.classList.remove('hidden');
     timeFilterContainer.classList.remove('hidden');
-    
+
     scheduleView.classList.add('hidden');
-    
+
     renderCategories();
     renderItems();
     updateProgress();
@@ -1572,7 +1572,7 @@ function updateViewMode() {
   } else {
     viewCategoryTab.classList.remove('active');
     viewScheduleTab.classList.add('active');
-    
+
     categoryWrapper.classList.add('hidden');
     categoryHeader.classList.add('hidden');
     progressContainer.classList.add('hidden');
@@ -1580,7 +1580,7 @@ function updateViewMode() {
     actionsArea.classList.add('hidden');
     itemList.classList.add('hidden');
     timeFilterContainer.classList.add('hidden');
-    
+
     scheduleView.classList.remove('hidden');
     renderSchedule();
   }
@@ -1588,37 +1588,37 @@ function updateViewMode() {
 
 function renderSchedule() {
   scheduleGrid.innerHTML = '';
-  
+
   // 各曜日のカードを作る（月〜日）
   const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-  
+
   weekDays.forEach(dayKey => {
     const dayCard = document.createElement('div');
     dayCard.className = 'day-card';
     dayCard.dataset.day = dayKey;
-    
+
     const dayHeader = document.createElement('div');
     dayHeader.className = 'day-header';
-    
+
     const dayTitle = document.createElement('div');
     dayTitle.className = 'day-title';
-    
+
     const dayName = document.createElement('span');
     dayName.className = 'day-name';
     dayName.textContent = t(dayKey); // i18nから曜日名を取得
-    
+
     const dayLabel = document.createElement('span');
     dayLabel.className = 'day-label';
     dayLabel.textContent = t(dayKey + 'Short'); // 月, 火 などの短い形式
-    
+
     dayTitle.appendChild(dayName);
     dayTitle.appendChild(dayLabel);
     dayHeader.appendChild(dayTitle);
     dayCard.appendChild(dayHeader);
-    
+
     const itemsList = document.createElement('ul');
     itemsList.className = 'day-items-list';
-    
+
     // 全カテゴリーからこの曜日のアイテムを探す
     let dayItems = [];
     categories.forEach(cat => {
@@ -1628,7 +1628,7 @@ function renderSchedule() {
         }
       });
     });
-    
+
     // 時間順に並べ替える
     dayItems.sort((a, b) => {
       if (!a.time && !b.time) return 0;
@@ -1636,7 +1636,7 @@ function renderSchedule() {
       if (!b.time) return -1;
       return a.time.localeCompare(b.time);
     });
-    
+
     if (dayItems.length === 0) {
       const placeholder = document.createElement('li');
       placeholder.className = 'no-items-placeholder';
@@ -1646,48 +1646,48 @@ function renderSchedule() {
       dayItems.forEach(item => {
         const li = document.createElement('li');
         li.className = 'day-item' + (item.checked ? ' checked' : '');
-        
+
         const content = document.createElement('div');
         content.className = 'day-item-content';
-        
+
         const icon = document.createElement('span');
         icon.className = 'day-item-icon';
         icon.textContent = item.categoryIcon;
-        
+
         const textWrapper = document.createElement('div');
         textWrapper.className = 'item-text-wrapper';
-        
+
         const name = document.createElement('span');
         name.className = 'day-item-name';
         name.textContent = item.text;
-        
+
         textWrapper.appendChild(name);
-        
+
         if (item.time) {
           const time = document.createElement('span');
           time.className = 'day-item-time';
           time.textContent = `⏰ ${item.time}`;
           textWrapper.appendChild(time);
         }
-        
+
         content.appendChild(icon);
         content.appendChild(textWrapper);
-        
+
         const check = document.createElement('div');
         check.className = 'day-item-check';
         check.innerHTML = '<i class="fa-solid fa-check"></i>';
-        
+
         li.appendChild(content);
         li.appendChild(check);
-        
+
         li.addEventListener('click', () => {
           toggleDayItem(item.id);
         });
-        
+
         itemsList.appendChild(li);
       });
     }
-    
+
     dayCard.appendChild(itemsList);
     scheduleGrid.appendChild(dayCard);
   });
@@ -1712,7 +1712,7 @@ function toggleDayItem(itemId) {
       item.checked = !item.checked;
     }
   });
-  
+
   saveData();
   refreshCurrentView();
 }
