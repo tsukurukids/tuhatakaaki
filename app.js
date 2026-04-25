@@ -1249,6 +1249,13 @@ function setupSortable(container, selector, onOrderChange, direction = 'vertical
     startY = point.clientY;
     dragEl = target;
 
+    // もしハンドルが指定されていて、そこをタッチした場合は長押しを待たずにすぐドラッグ開始
+    if (handleSelector && e.target.closest(handleSelector)) {
+      e.preventDefault(); // スクロール防止
+      startSort(point);
+      return;
+    }
+
     longPressTimer = setTimeout(() => {
       startSort(point);
     }, 600);
@@ -1257,6 +1264,9 @@ function setupSortable(container, selector, onOrderChange, direction = 'vertical
       clearTimeout(longPressTimer);
       window.removeEventListener('pointermove', handleMoveCheck);
       window.removeEventListener('pointerup', handleCancel);
+      window.removeEventListener('pointercancel', handleCancel);
+      window.removeEventListener('touchend', handleCancel);
+      window.removeEventListener('touchcancel', handleCancel);
     };
 
     const handleMoveCheck = (me) => {
@@ -1268,6 +1278,9 @@ function setupSortable(container, selector, onOrderChange, direction = 'vertical
 
     window.addEventListener('pointermove', handleMoveCheck);
     window.addEventListener('pointerup', handleCancel);
+    window.addEventListener('pointercancel', handleCancel);
+    window.addEventListener('touchend', handleCancel);
+    window.addEventListener('touchcancel', handleCancel);
   };
 
   const startSort = (point) => {
