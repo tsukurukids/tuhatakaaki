@@ -108,7 +108,12 @@ const THEME_COLORS = [
   { name: 'いちご', primary: '#ef4444', g1: '#ef4444', g2: '#fb7185', g3: '#fda4af' },
   { name: '宇宙', primary: '#8b5cf6', g1: '#8b5cf6', g2: '#d946ef', g3: '#f472b6' },
   { name: '森', primary: '#059669', g1: '#059669', g2: '#4ade80', g3: '#bef264' },
-  { name: '空', primary: '#0ea5e9', g1: '#0ea5e9', g2: '#7dd3fc', g3: '#e0f2fe' }
+  { name: '空', primary: '#0ea5e9', g1: '#0ea5e9', g2: '#7dd3fc', g3: '#e0f2fe' },
+  // ここからVIPカラーを追加
+  { name: 'VIPゴールド', primary: '#d4af37', g1: '#d4af37', g2: '#fcf6ba', g3: '#ff8c00' },
+  { name: 'VIPプラチナ', primary: '#94a3b8', g1: '#94a3b8', g2: '#e2e8f0', g3: '#475569' },
+  { name: 'VIPルビー', primary: '#e11d48', g1: '#e11d48', g2: '#be123c', g3: '#fb7185' },
+  { name: 'VIPサファイア', primary: '#1e3a8a', g1: '#1e3a8a', g2: '#3b82f6', g3: '#1e40af' }
 ];
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
