@@ -103,7 +103,7 @@ const categoryHeader = document.querySelector('.category-header');
 const THEME_COLORS = [
   { name: 'ベリー', primary: '#7c6ef5', g1: '#7c6ef5', g2: '#f06292', g3: '#48d3c8' },
   { name: 'ソーダ', primary: '#3b82f6', g1: '#3b82f6', g2: '#06b6d4', g3: '#2dd4bf' },
-  { name: 'メロン', primary: '#10b981', g1: '#10b981', g2: '#34d399', g3: '#a7f3d0' },
+  { name: 'メロン', primary: '#10b981', g1: '#10b981', g2: '#34d399', g3: '#6ee7b7' },
   { name: '夕焼け', primary: '#f97316', g1: '#f97316', g2: '#fbbf24', g3: '#fde047' },
   { name: 'いちご', primary: '#ef4444', g1: '#ef4444', g2: '#fb7185', g3: '#fda4af' },
   { name: '宇宙', primary: '#8b5cf6', g1: '#8b5cf6', g2: '#d946ef', g3: '#f472b6' },
@@ -116,13 +116,13 @@ const THEME_COLORS = [
   { name: 'VIPルビー', primary: '#e11d48', g1: '#e11d48', g2: '#be123c', g3: '#fb7185' },
   { name: 'VIPサファイア', primary: '#1e3a8a', g1: '#1e3a8a', g2: '#3b82f6', g3: '#1e40af' },
 
-  // ネイチャーカラー
+  // ネイチャー
   { name: 'ラベンダー', primary: '#8b5cf6', g1: '#a78bfa', g2: '#c4b5fd', g3: '#7c3aed' },
   { name: 'ミント', primary: '#2dd4bf', g1: '#5eead4', g2: '#99f6e4', g3: '#0d9488' },
   { name: 'ピーチ', primary: '#fb923c', g1: '#ffedd5', g2: '#fed7aa', g3: '#f97316' },
   { name: 'レモン', primary: '#facc15', g1: '#fef08a', g2: '#fef9c3', g3: '#eab308' },
 
-  // サイバー・モダン
+  // モダン・サイバー
   { name: 'サイバー', primary: '#06b6d4', g1: '#22d3ee', g2: '#67e8f9', g3: '#0891b2' },
   { name: 'ネオン', primary: '#f472b6', g1: '#fb923c', g2: '#fbcfe8', g3: '#db2777' },
   { name: 'オーシャン', primary: '#3b82f6', g1: '#60a5fa', g2: '#93c5fd', g3: '#2563eb' },
@@ -132,7 +132,31 @@ const THEME_COLORS = [
   { name: 'シャンパン', primary: '#fde68a', g1: '#fef3c7', g2: '#fffbeb', g3: '#fbbf24' },
   { name: 'ローズ', primary: '#fda4af', g1: '#fecaca', g2: '#fee2e2', g3: '#f43f5e' },
   { name: 'カカオ', primary: '#78350f', g1: '#92400e', g2: '#b45309', g3: '#451a03' },
-  { name: 'エメラルド', primary: '#10b981', g1: '#34d399', g2: '#6ee7b7', g3: '#059669' }
+  { name: 'エメラルド', primary: '#10b981', g1: '#34d399', g2: '#6ee7b7', g3: '#059669' },
+
+  // スイーツ
+  { name: 'キャンディ', primary: '#ff007f', g1: '#ff007f', g2: '#00ffff', g3: '#ffff00' },
+  { name: 'マカロン', primary: '#bbf7d0', g1: '#fbcfe8', g2: '#fef08a', g3: '#bfdbfe' },
+  { name: 'ショコラ', primary: '#451a03', g1: '#78350f', g2: '#92400e', g3: '#262626' },
+  { name: 'バニラ', primary: '#fef3c7', g1: '#fffbeb', g2: '#fafaf9', g3: '#e7e5e4' },
+
+  // スペース
+  { name: '銀河', primary: '#4c1d95', g1: '#1e3a8a', g2: '#6366f1', g3: '#db2777' },
+  { name: '星雲', primary: '#701a75', g1: '#4a044e', g2: '#d946ef', g3: '#2563eb' },
+  { name: '超新星', primary: '#fbbf24', g1: '#f59e0b', g2: '#ef4444', g3: '#dc2626' },
+  { name: '日食', primary: '#111827', g1: '#1f2937', g2: '#374151', g3: '#000000' },
+
+  // アース
+  { name: '砂漠', primary: '#b45309', g1: '#d97706', g2: '#fbbf24', g3: '#78350f' },
+  { name: 'サバンナ', primary: '#65a30d', g1: '#a3e635', g2: '#facc15', g3: '#4d7c0f' },
+  { name: '氷河', primary: '#06b6d4', g1: '#67e8f9', g2: '#ecfeff', g3: '#0891b2' },
+  { name: '火山', primary: '#991b1b', g1: '#dc2626', g2: '#f87171', g3: '#450a0a' },
+
+  // フラワー
+  { name: 'ひまわり', primary: '#fbbf24', g1: '#fbbf24', g2: '#fef08a', g3: '#854d0e' },
+  { name: 'あじさい', primary: '#6366f1', g1: '#a5b4fc', g2: '#d8b4fe', g3: '#4338ca' },
+  { name: 'チューリップ', primary: '#f43f5e', g1: '#fb7185', g2: '#fecaca', g3: '#e11d48' },
+  { name: 'ゆり', primary: '#f8fafc', g1: '#f1f5f9', g2: '#e2e8f0', g3: '#94a3b8' }
 ];
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
