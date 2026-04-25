@@ -109,11 +109,30 @@ const THEME_COLORS = [
   { name: '宇宙', primary: '#8b5cf6', g1: '#8b5cf6', g2: '#d946ef', g3: '#f472b6' },
   { name: '森', primary: '#059669', g1: '#059669', g2: '#4ade80', g3: '#bef264' },
   { name: '空', primary: '#0ea5e9', g1: '#0ea5e9', g2: '#7dd3fc', g3: '#e0f2fe' },
-  // ここからVIPカラーを追加
+  
+  // VIPカラー
   { name: 'VIPゴールド', primary: '#d4af37', g1: '#d4af37', g2: '#fcf6ba', g3: '#ff8c00' },
   { name: 'VIPプラチナ', primary: '#94a3b8', g1: '#94a3b8', g2: '#e2e8f0', g3: '#475569' },
   { name: 'VIPルビー', primary: '#e11d48', g1: '#e11d48', g2: '#be123c', g3: '#fb7185' },
-  { name: 'VIPサファイア', primary: '#1e3a8a', g1: '#1e3a8a', g2: '#3b82f6', g3: '#1e40af' }
+  { name: 'VIPサファイア', primary: '#1e3a8a', g1: '#1e3a8a', g2: '#3b82f6', g3: '#1e40af' },
+
+  // ネイチャーカラー
+  { name: 'ラベンダー', primary: '#8b5cf6', g1: '#a78bfa', g2: '#c4b5fd', g3: '#7c3aed' },
+  { name: 'ミント', primary: '#2dd4bf', g1: '#5eead4', g2: '#99f6e4', g3: '#0d9488' },
+  { name: 'ピーチ', primary: '#fb923c', g1: '#ffedd5', g2: '#fed7aa', g3: '#f97316' },
+  { name: 'レモン', primary: '#facc15', g1: '#fef08a', g2: '#fef9c3', g3: '#eab308' },
+
+  // サイバー・モダン
+  { name: 'サイバー', primary: '#06b6d4', g1: '#22d3ee', g2: '#67e8f9', g3: '#0891b2' },
+  { name: 'ネオン', primary: '#f472b6', g1: '#fb923c', g2: '#fbcfe8', g3: '#db2777' },
+  { name: 'オーシャン', primary: '#3b82f6', g1: '#60a5fa', g2: '#93c5fd', g3: '#2563eb' },
+  { name: 'フォレスト', primary: '#16a34a', g1: '#4ade80', g2: '#86efac', g3: '#15803d' },
+
+  // プレミアム
+  { name: 'シャンパン', primary: '#fde68a', g1: '#fef3c7', g2: '#fffbeb', g3: '#fbbf24' },
+  { name: 'ローズ', primary: '#fda4af', g1: '#fecaca', g2: '#fee2e2', g3: '#f43f5e' },
+  { name: 'カカオ', primary: '#78350f', g1: '#92400e', g2: '#b45309', g3: '#451a03' },
+  { name: 'エメラルド', primary: '#10b981', g1: '#34d399', g2: '#6ee7b7', g3: '#059669' }
 ];
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
